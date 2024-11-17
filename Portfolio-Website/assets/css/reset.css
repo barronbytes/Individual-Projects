@@ -1,0 +1,70 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+MAIN COLOR:
+GRAY COLOR:
+ACCENT COLOR:
+*/
+
+/* Reset universal styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    background: none;
+}
+
+*::before, *::after {
+    box-sizing: inherit;
+}    
+
+html {
+    font-size: 62.5%; /* Set 1rem to equal 10px for easier scaling */
+}
+
+body {
+    position: relative;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #555;
+    background-color: #fff;
+}
+    
+ul, ol, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input, textarea, select {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+}
+
+img, video {
+    max-width: 100%; /* Ensure media scales responsively */
+    height: auto;
+    display: block; /* **Prevent inline display gaps for media** */
+}
+
+:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+/* Accessibility improvements */
+body {
+    -webkit-font-smoothing: antialiased; /* Improve text rendering on Webkit browsers */
+    -moz-osx-font-smoothing: grayscale;
+}
