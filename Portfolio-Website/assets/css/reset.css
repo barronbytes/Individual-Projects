@@ -8,6 +8,12 @@ FONT SIZE SYSTEM (px)
 MAIN COLOR:
 GRAY COLOR:
 ACCENT COLOR:
+
+RESPONSIVE BREAKPOINTS:
+Mobile 320px (4 columns)
+Tablet 720px (9 columns)
+Laptop 960px (12 columns)
+Desktop 1120px (14 columns)
 */
 
 /* Reset universal styles */
@@ -32,7 +38,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-    color: #555;
+    color: black;
     background-color: #fff;
 }
     

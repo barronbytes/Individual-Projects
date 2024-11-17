@@ -1,0 +1,66 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+MAIN COLOR:
+GRAY COLOR:
+ACCENT COLOR:
+*/
+
+:root {
+    --breakpoint-mobile: 320px; /* 4 columns */
+    --breakpoint-tablet: 720px; /* 9 columns */
+    --breakpoint-laptop: 960px; /* 12 columns */
+    --breakpoint-desktop: 1120px; /* 14 columns */
+
+    --spacer-box: 10px;
+    --spacer-col-1: 20px;
+    --spacer-row-1: 16px;
+    --spacer-row-2: 32px;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.grid {
+    display: grid;
+}
+
+.flex {
+    display: flex;
+}
+
+.header {
+    flex-flow: row wrap; /* flex-direction and flex-wrap */
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--breakpoint-desktop);
+    margin: 0 auto;
+    padding: 0 var(--spacer-box);
+    font-size: 1.6rem;
+}
+
+.header img {
+    width: var(--spacer-row-2);
+    height: auto;
+    position: relative;
+}
+
+.logo img:nth-child(2) {
+    margin-left: -10px;
+    z-index: 1; /* will be in front of the first image */
+}
+
+.nav {
+    gap: var(--spacer-col-1);
+}
+
+.nav-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
