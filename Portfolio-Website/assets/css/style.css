@@ -12,6 +12,7 @@ ACCENT COLOR:
 
 :root {
     --breakpoint-mobile: 320px; /* 4 columns */
+    --breakpoint-six: 480px; /* 6 columns */
     --breakpoint-tablet: 720px; /* 9 columns */
     --breakpoint-laptop: 960px; /* 12 columns */
     --breakpoint-desktop: 1120px; /* 14 columns */
@@ -22,6 +23,7 @@ ACCENT COLOR:
     --col-2: 40px;
     --col-3: 60px;
     --col-4: 80px;
+    --col-8: 128px;
     --row-1: 16px;
     --row-2: 32px;
     --row-3: 48px;
@@ -60,7 +62,6 @@ ACCENT COLOR:
     --green-800: #0A3D1D;
     --green-900: #051E0E;
 
-
    /* Blue Shades */
    --blue-100: #B2C2F5;
    --blue-200: #6584EB;
@@ -88,12 +89,12 @@ html { font-size: 62.5%; }
 
 body { font-size: 1.6rem; }
 
-h1 { font-size: 5.2rem; }
-h2 { font-size: 4.4rem; }
-h3 { font-size: 3.6rem; }
-h4 { font-size: 3rem; }
-h5 { font-size: 2.4rem; }
-h6 { font-size: 2rem; }
+h1 { font-size: 5.2rem; font-family: Georgia, 'Times New Roman', Times, serif; }
+h2 { font-size: 4.4rem; font-family: Georgia, 'Times New Roman', Times, serif; }
+h3 { font-size: 3.6rem; font-family: Georgia, 'Times New Roman', Times, serif; }
+h4 { font-size: 3rem; font-family: Georgia, 'Times New Roman', Times, serif; }
+h5 { font-size: 2.4rem; font-family: Georgia, 'Times New Roman', Times, serif; }
+h6 { font-size: 2rem; font-family: Georgia, 'Times New Roman', Times, serif; }
 
 .header-orange { color: var(--orange-600); }
 .header-white { color: white; }
@@ -101,6 +102,7 @@ h6 { font-size: 2rem; }
 
 header {
     display: block;
+    border-bottom: solid 1px var(--gray-400);
     background-color: var(--gray-900);
     color: var(--gray-400);
 }
@@ -151,6 +153,12 @@ header {
     height: var(--col-3);
 }
 
+.hero-cta {
+    display: block;
+    background-color: var(--gray-900);
+    color: var(--gray-400);
+}
+
 .hero {
     max-width: var(--breakpoint-desktop);
     margin: 0 auto;
@@ -166,4 +174,22 @@ header {
     width: 256px;
     height: auto;
     padding: var(--row-2) 0;
+}
+
+.cta {
+    display: block;
+    background-color: var(--green-100);
+    color: var(--gray-900);
+}
+
+.cta-container {
+    max-width: var(--breakpoint-tablet);
+    margin: 0 auto;
+    padding: var(--col-3) var(--col-padding) var(--col-8) var(--col-padding);
+
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--row-2);
+    align-items: center;
+    text-align: center;
 }
