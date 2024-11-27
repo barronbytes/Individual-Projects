@@ -72,29 +72,47 @@ ACCENT COLOR:
    --blue-800: #03091B;
    --blue-900: #02040E;
    
+   /* Orange Shades */
+   --orange-100: #FAECD6;
+   --orange-200: #F5DAAD;
+   --orange-300: #F1C989;
+   --orange-400: #ECB660;
+   --orange-500: #E7A337;
+   --orange-600: #CD8819;
+   --orange-700: #9B6713;
+   --orange-800: #64420C;
+   --orange-900: #332106;
 }
 
-html {
-    font-size: 62.5%;
-}
+html { font-size: 62.5%; }
 
-body {
-    font-size: 1.6rem;
-}
+body { font-size: 1.6rem; }
+
+h1 { font-size: 5.2rem; }
+h2 { font-size: 4.4rem; }
+h3 { font-size: 3.6rem; }
+h4 { font-size: 3rem; }
+h5 { font-size: 2.4rem; }
+h6 { font-size: 2rem; }
+
+.header-orange { color: var(--orange-600); }
+.header-white { color: white; }
+.highlight-orange { color: var(--orange-400); }
 
 header {
     display: block;
     background-color: var(--gray-900);
-    color: var(--gray-100);
+    color: var(--gray-400);
 }
 
 .header {
-    display: grid;
-    grid-template-columns: var(--col-3) auto;
-    column-gap: var(--col-1);
     max-width: var(--breakpoint-desktop);
     margin: 0 auto;
     padding: var(--row-1) var(--col-padding);
+
+    display: grid;
+    grid-template-columns: var(--col-3) auto;
+    column-gap: var(--col-1);
 }
 
 .nav-logo {
@@ -117,9 +135,9 @@ header {
 .nav-item {
     display: flex;
     flex-direction: column;
-    align-items: center; /* align vertically */
+    row-gap: 4px;
+    align-items: center;
     text-align: center;
-    gap: 4px;
 }
 
 .nav-item img {
@@ -131,4 +149,21 @@ header {
 .nav-item img:last-child {
     width: var(--col-3);
     height: var(--col-3);
+}
+
+.hero {
+    max-width: var(--breakpoint-desktop);
+    margin: 0 auto;
+    padding: var(--row-3) var(--col-padding);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero img {
+    width: 256px;
+    height: auto;
+    padding: var(--row-2) 0;
 }
