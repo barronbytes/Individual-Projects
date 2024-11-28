@@ -10,6 +10,21 @@ GRAY COLOR:
 ACCENT COLOR:
 */
 
+/* ==================== HTML DEFAULTS ==================== */
+
+html { font-size: 62.5%; }
+
+body { font-size: 1.6rem; }
+
+h1 { font-size: 5.2rem; font-family: Georgia, 'Times New Roman', Times, serif; }
+h2 { font-size: 4.4rem; font-family: Georgia, 'Times New Roman', Times, serif; }
+h3 { font-size: 3.6rem; font-family: Georgia, 'Times New Roman', Times, serif; }
+h4 { font-size: 3rem; font-family: Georgia, 'Times New Roman', Times, serif; }
+h5 { font-size: 2.4rem; font-family: Georgia, 'Times New Roman', Times, serif; }
+h6 { font-size: 2rem; font-family: Georgia, 'Times New Roman', Times, serif; }
+
+/* ==================== COLORS ==================== */
+
 :root {
     --breakpoint-mobile: 320px; /* 4 columns */
     --breakpoint-six: 480px; /* 6 columns */
@@ -24,6 +39,7 @@ ACCENT COLOR:
     --col-3: 60px;
     --col-4: 80px;
     --col-8: 128px;
+    --row-padding: 8px;
     --row-1: 16px;
     --row-2: 32px;
     --row-3: 48px;
@@ -85,20 +101,36 @@ ACCENT COLOR:
    --orange-900: #332106;
 }
 
-html { font-size: 62.5%; }
-
-body { font-size: 1.6rem; }
-
-h1 { font-size: 5.2rem; font-family: Georgia, 'Times New Roman', Times, serif; }
-h2 { font-size: 4.4rem; font-family: Georgia, 'Times New Roman', Times, serif; }
-h3 { font-size: 3.6rem; font-family: Georgia, 'Times New Roman', Times, serif; }
-h4 { font-size: 3rem; font-family: Georgia, 'Times New Roman', Times, serif; }
-h5 { font-size: 2.4rem; font-family: Georgia, 'Times New Roman', Times, serif; }
-h6 { font-size: 2rem; font-family: Georgia, 'Times New Roman', Times, serif; }
-
 .header-orange { color: var(--orange-600); }
 .header-white { color: white; }
 .highlight-orange { color: var(--orange-400); }
+
+/* ==================== COMPONENTS ==================== */
+
+.button {
+    display: inline-block;
+    border: 1px solid var(--gray-500);
+    border-radius: 5px;
+    padding: var(--row-padding) var(--col-padding);
+
+    background-color: var(--gray-100);
+    color: var(--gray-700);
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+
+    box-shadow: 0px 6px 32px -10px var(--gray-300);
+    transition: background-color 200ms ease-in-out;
+}
+
+.button:hover {
+    border-color: var(--gray-900);
+    background-color: var(--gray-300);
+    color: var(--gray-900);
+}
+
+/* ==================== HEADER ==================== */
 
 header {
     display: block;
@@ -153,6 +185,8 @@ header {
     height: var(--col-3);
 }
 
+/* ==================== HERO-CTA ==================== */
+
 .hero-cta {
     display: block;
     background-color: var(--gray-900);
@@ -192,4 +226,16 @@ header {
     row-gap: var(--row-2);
     align-items: center;
     text-align: center;
+}
+
+.cta-button {
+    border-color: var(--green-500);
+    background-color: var(--green-200);
+    color: var(--green-900);
+    box-shadow: 0px 6px 32px -10px var(--green-300);
+}
+
+.cta-button:hover {
+    background-color: var(--green-900);
+    color: var(--green-100);
 }
