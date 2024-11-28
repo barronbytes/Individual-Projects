@@ -149,6 +149,18 @@ header {
     column-gap: var(--col-1);
 }
 
+.header img {
+    width: var(--col-2);
+    height: var(--col-2);
+    position: relative;
+    background-color: var(--gray-100);
+    cursor: pointer;
+}
+
+.header img:hover {
+    background-color: var(--green-400);
+}
+
 .nav-logo {
     display: flex;
     align-items: center;
@@ -174,13 +186,16 @@ header {
     text-align: center;
 }
 
-.nav-item img {
-    width: var(--col-2);
-    height: var(--col-2);
-    position: relative;
+.nav-item:hover {
+    color: var(--green-400);
+    cursor: pointer;
 }
 
-.nav-item img:last-child {
+.nav-menu > .nav-item:nth-child(5) img {
+    background-color: var(--green-400);
+}
+
+.nav-menu > .nav-item:last-child img {
     width: var(--col-3);
     height: var(--col-3);
 }
