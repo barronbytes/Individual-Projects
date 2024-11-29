@@ -109,6 +109,11 @@ h6 { font-size: 2rem; font-family: Georgia, 'Times New Roman', Times, serif; }
 .header-white { color: white; }
 .highlight-orange { color: var(--orange-400); }
 
+.text-green {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
 /* ==================== COMPONENTS ==================== */
 
 .button {
@@ -185,7 +190,7 @@ header {
 .nav-item {
     display: flex;
     flex-direction: column;
-    gutter-row-gap: 4px;
+    row-gap: 4px;
     align-items: center;
     text-align: center;
 }
@@ -258,6 +263,20 @@ header {
 
 .problem h6 { margin-top: -24px; }
 
+.problem ul li {
+    margin-bottom: var(--gutter-row-padding);
+    padding-left: 36px;
+    background-image: url("../images/trouble-star.png");
+    background-size: var(--gutter-row-2) var(--gutter-row-2);
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+.problem ul li:hover {
+    color: var(--green-400);
+    background-image: url("../images/trouble-star-full.png");
+}
+
 /* ==================== SOLUTION-CTA ==================== */
 
 .solution-cta {
@@ -292,12 +311,12 @@ header {
 
 .solution-cta-button {
     border-color: var(--green-500);
-    background-color: var(--green-200);
+    background-color: var(--green-400);
     color: var(--green-900);
     box-shadow: 0px 6px 32px -10px var(--green-300);
 }
 
 .solution-cta-button:hover {
     background-color: var(--green-900);
-    color: var(--green-100);
+    color: var(--green-400);
 }
