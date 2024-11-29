@@ -354,9 +354,9 @@ header {
 
 .benefits div {
     padding: var(--gutter-row-3) 0;
-
     display: flex;
     flex-direction: column;
+    row-gap: var(--gutter-row-1);
     align-items: center;
     text-align: center;
 }
@@ -369,4 +369,8 @@ header {
 .benefits img {
     width: var(--gutter-row-5);
     height: auto;
+}
+
+.benefits p.benefits-title {
+    font-weight: 600;
 }
