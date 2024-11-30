@@ -217,7 +217,7 @@ header {
     height: var(--gutter-col-3);
 }
 
-/* ==================== HERO-CTA ==================== */
+/* ==================== HERO-SECTION ==================== */
 
 .hero-cta {
     display: block;
@@ -242,50 +242,51 @@ header {
     padding: var(--gutter-row-2) 0;
 }
 
-/* ==================== PROBLEM-CTA ==================== */
+/* ==================== PROBLEMS-SECTION ==================== */
 
-.problem-cta { display: block; }
+.problems-section {
+    display: block;
+    padding: var(--gutter-row-3) var(--gutter-col-padding);
+}
 
-.problem-container {
+.problems {
     max-width:  var(--breakpoint-tablet);
     margin: 0 auto;
-    padding: var(--gutter-row-3) var(--gutter-col-padding);
 
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: auto 1fr;
     column-gap: var(--gutter-col-3);
     align-items: center;
 }
 
-.problem-cta img {
+.problems div {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gutter-col-1);
+}
+
+.problems h6 {
+    margin-top: var(--backup-row-1); 
+    line-height: 1.5; 
+}
+
+.problems img {
     width: var(--image-col-3);
     height: auto;
 }
 
-.problem {
-    display: flex;
-    flex-direction: column;
-    row-gap: var(--gutter-row-1);
-    align-items: flex-start; /* ensures children width matches content width--NOT FULL WIDTH */
-}
-
-.problem h6 { margin: var(--backup-row-0) 0 var(--gutter-row-1) 0; }
-
-.problem ul li {
+.problems-2 ul li {
     margin-bottom: var(--gutter-row-padding);
     padding-left: 36px;
-    background-image: url("../images/trouble-star.png");
+    background-image: url("../images/problems-star.png");
     background-size: var(--gutter-row-2) var(--gutter-row-2);
     background-position: left center;
     background-repeat: no-repeat;
 }
 
-.problem ul li:hover {
-    color: var(--green-400);
-    background-image: url("../images/trouble-star-full.png");
-}
+.problems-2 ul li:hover { color: var(--green-400); }
 
-/* ==================== SOLUTIONS-SECTION==================== */
+/* ==================== SOLUTIONS-SECTION ==================== */
 
 .solutions-section {
     display: block;
@@ -296,6 +297,7 @@ header {
 .solutions {
     max-width: var(--breakpoint-tablet);
     margin: 0 auto;
+    padding: 0 var(--gutter-col-padding);    
 
     display: grid;
     grid-template-columns: 1fr auto;
@@ -334,6 +336,7 @@ header {
 .benefits-section {
     max-width: var(--breakpoint-desktop);
     margin: -140px auto 0 auto;
+    padding: 0 var(--gutter-col-padding);
     border: 1px solid var(--gray-500);
     border-radius: 5px;
     padding: 0 var(--gutter-col-padding);
