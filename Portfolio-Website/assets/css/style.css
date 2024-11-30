@@ -285,47 +285,47 @@ header {
     background-image: url("../images/trouble-star-full.png");
 }
 
-/* ==================== SOLUTION-CTA ==================== */
+/* ==================== SOLUTIONS-SECTION==================== */
 
-.solution-cta {
+.solutions-section {
     display: block;
     padding: var(--gutter-row-3) 0 188px 0;
-    background-color: var(--green-100);
+    background-color: var(--green-200);
 }
 
-.solution-container {
+.solutions {
     max-width: var(--breakpoint-tablet);
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr auto;
     column-gap: var(--gutter-col-3);
     align-items: center;
 }
 
-.solution-cta img {
+.solutions div {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gutter-col-1);
+}
+
+.solutions h6 {
+    margin-top: var(--backup-row-1); 
+    line-height: 1.5; 
+}
+
+.solutions img {
     width: var(--image-col-2);
     height: auto;
 }
 
-.solution {
-    display: flex;
-    flex-direction: column;
-    row-gap: var(--gutter-row-1);
-    align-items: flex-start; /* ensures children width matches content width--NOT FULL WIDTH */
+.solutions-cta { 
+    border-color: var(--gray-700);
+    background-color: var(--green-400); 
 }
 
-.solution h6 { margin: var(--backup-row-0) 0 var(--gutter-row-1) 0; }
-
-.solution-cta-button {
-    border-color: var(--green-500);
-    background-color: var(--green-400);
-    color: var(--green-900);
-    box-shadow: 0px 6px 32px -10px var(--green-300);
-}
-
-.solution-cta-button:hover {
-    background-color: var(--green-900);
+.solutions-cta:hover {
+    background-color: var(--gray-900);
     color: var(--green-400);
 }
 
