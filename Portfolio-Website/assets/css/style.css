@@ -23,6 +23,8 @@ h4 { font-size: 3rem; font-family: Georgia, 'Times New Roman', Times, serif; lin
 h5 { font-size: 2.4rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
 h6 { font-size: 2rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
 
+a { cursor: pointer; }
+
 /* ==================== COLORS ==================== */
 
 :root {
@@ -130,12 +132,11 @@ h6 { font-size: 2rem; font-family: Georgia, 'Times New Roman', Times, serif; lin
     border-radius: 5px;
     padding: var(--gutter-row-padding) var(--gutter-col-padding);
 
-    background-color: var(--gray-100);
-    color: var(--gray-700);
+    background-color: var(--gray-300);
+    color: var(--gray-900);
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    cursor: pointer;
 
     box-shadow: 0px 6px 32px -10px var(--gray-300);
     transition: background-color 200ms ease-in-out;
@@ -143,7 +144,8 @@ h6 { font-size: 2rem; font-family: Georgia, 'Times New Roman', Times, serif; lin
 
 .button:hover {
     border-color: var(--gray-900);
-    background-color: var(--gray-300);
+    background-color: var(--green-400);
+    box-shadow: 0px 6px 32px -10px var(--green-400);
     color: var(--gray-900);
 }
 
@@ -171,7 +173,6 @@ header {
     height: var(--gutter-col-2);
     position: relative;
     background-color: var(--gray-100);
-    cursor: pointer;
 }
 
 .header img:hover {
@@ -205,7 +206,6 @@ header {
 
 .nav-item:hover {
     color: var(--green-400);
-    cursor: pointer;
 }
 
 .nav-menu > .nav-item:nth-child(5) img {
@@ -374,3 +374,60 @@ header {
 .benefits p.benefits-title {
     font-weight: 600;
 }
+
+/* ==================== FOOTER ==================== */
+
+footer {
+    display: block;
+    background-color: var(--gray-900);
+    color: var(--gray-400);
+}
+
+.footer {
+    max-width: var(--breakpoint-desktop);
+    margin: 0 auto;
+    padding: var(--gutter-row-3) var(--gutter-col-padding);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer div:nth-child(2) { margin: var(--gutter-row-2) 0; }
+
+.footer-1 img {
+    width: var(--gutter-col-4);
+    height: var(--gutter-col-4);
+    position: relative;
+    background-color: var(--gray-100);
+    justify-self: center;
+}
+
+.footer-1 img:hover { background-color: var(--green-400); }
+
+.footer-2 {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gutter-row-1);
+    align-items:center;
+    text-align: center;
+}
+
+.footer-2 a {
+    margin: var(--gutter-row-1) 0;
+}
+
+.footer-3 {
+    display: flex;
+    flex-direction: row;
+    column-gap: var(--gutter-col-1);
+}
+
+.footer-3 img {
+    width: var(--gutter-col-2);
+    height: var(--gutter-col-2);   
+    background-color: var(--gray-100); 
+}
+
+.footer-3 img:hover { background-color: var(--green-400); }
