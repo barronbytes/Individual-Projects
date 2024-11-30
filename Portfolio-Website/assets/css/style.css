@@ -395,6 +395,24 @@ header {
 
 .benefits-2-item .benefits-title { font-weight: 600; }
 
+/* ==================== MAIN ==================== */
+
+main {
+    display: block;
+    max-width: var(--breakpoint-desktop);
+    margin: 0 auto;
+    padding: var(--gutter-row-5) var(--gutter-col-padding);
+    text-align: center;
+}
+
+.portfolio-1 { 
+    margin-bottom: var(--gutter-row-5);
+
+    display: flex; 
+    flex-direction: column; 
+    row-gap: var(--gutter-row-1); 
+}
+
 /* ==================== FOOTER ==================== */
 
 footer {
