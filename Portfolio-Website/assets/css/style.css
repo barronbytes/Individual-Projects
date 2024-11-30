@@ -219,16 +219,21 @@ header {
 
 /* ==================== HERO-SECTION ==================== */
 
-.hero-cta {
+.hero-section {
     display: block;
     background-color: var(--gray-900);
     color: var(--gray-400);
 }
 
-.hero {
+.hero-section img {
+    width: 256px;
+    height: auto;
+}
+
+.hero-section div {
     max-width: var(--breakpoint-desktop);
     margin: 0 auto;
-    padding: var(--gutter-row-3) var(--gutter-col-padding);
+    padding: 0 var(--gutter-col-padding);
 
     display: flex;
     flex-direction: column;
@@ -236,46 +241,44 @@ header {
     text-align: center;
 }
 
-.hero img {
-    width: 256px;
-    height: auto;
-    padding: var(--gutter-row-2) 0;
+.hero-section div:first-child { padding: var(--gutter-row-3) 0 var(--gutter-row-2) 0; }
+
+.hero-section div:last-child { 
+    padding: var(--gutter-row-2) 0 var(--gutter-row-3) 0; 
+    row-gap: var(--gutter-row-1);
 }
 
 /* ==================== PROBLEMS-SECTION ==================== */
 
 .problems-section {
-    display: block;
-    padding: var(--gutter-row-3) var(--gutter-col-padding);
-}
-
-.problems {
     max-width:  var(--breakpoint-tablet);
     margin: 0 auto;
+    padding: var(--gutter-row-3) var(--gutter-col-padding);
 
-    display: grid;
-    grid-template-columns: auto 1fr;
+    display: flex;
+    flex-direction: row;
     column-gap: var(--gutter-col-3);
-    align-items: center;
+    align-items:center; /* center vertically */
+    justify-content: center; /* center horizontally */
 }
 
-.problems div {
+.problems-section div {
     display: flex;
     flex-direction: column;
     row-gap: var(--gutter-col-1);
 }
 
-.problems h6 {
+.problems-section h6 {
     margin-top: var(--backup-row-1); 
     line-height: 1.5; 
 }
 
-.problems img {
+.problems-section img {
     width: var(--image-col-3);
     height: auto;
 }
 
-.problems-2 ul li {
+.problems-section ul li {
     margin-bottom: var(--gutter-row-padding);
     padding-left: 36px;
     background-image: url("../images/problems-star.png");
@@ -284,7 +287,7 @@ header {
     background-repeat: no-repeat;
 }
 
-.problems-2 ul li:hover { color: var(--green-400); }
+.problems-section ul li:hover { color: var(--green-400); }
 
 /* ==================== SOLUTIONS-SECTION ==================== */
 
