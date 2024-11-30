@@ -46,7 +46,8 @@ a { cursor: pointer; }
     --gutter-row-3: 48px;
     --gutter-row-4: 64px;
     --gutter-row-5: 80px;
-    --gutter-row-8: 128p;
+    --gutter-row-8: 128px;
+    --gutter-row-10: 160px;
     --backup-row-0: -8px;
     --backup-row-1: -16px;
     --backup-row-2: -32px;
@@ -56,6 +57,7 @@ a { cursor: pointer; }
     --image-col-1: 60px;
     --image-col-2: 140px;
     --image-col-3: 220px;
+    --image-col-4: 300px;
 
     /* Gray Shades */
     --gray-100: #EDEDED;
@@ -154,6 +156,20 @@ a { cursor: pointer; }
     background-color: var(--green-400);
     box-shadow: 0px 6px 32px -10px var(--green-400);
     color: var(--gray-900);
+}
+
+.group {
+    display: inline-block;
+    border: 1px solid var(--gray-500);
+    border-radius: 5px;
+    overflow: hidden; /* maintains border-radius */
+
+    box-shadow: 0px 6px 32px -10px var(--gray-300);
+    transition: background-color 200ms ease-in-out;
+}
+
+.group:hover {
+    box-shadow: 0px 6px 32px -10px var(--gray-900);
 }
 
 /* ==================== HEADER ==================== */
@@ -411,6 +427,36 @@ main {
     display: flex; 
     flex-direction: column; 
     row-gap: var(--gutter-row-1); 
+}
+
+.portfolio-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: var(--gutter-col-1);
+    row-gap: var(--gutter-col-1);
+}
+
+.project-1 { display: block; }
+
+.project-1 img {
+    width: 100%;
+    height: var(--image-col-3);
+    object-fit: cover; /* maintain aspect ratio */
+    display: block; /* avoid inline spacing issues */
+}
+
+.project-2 {
+    width: 100%;
+    height: var(--image-col-3);
+    padding: 0 var(--gutter-col-1);
+
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gutter-row-2);
+    justify-content: center; /* center item vertically */
+    align-items: center; /* center item horizontally */
+    text-align: center; /* center TEXT horizontally */
+    display: none; /* hidden by default */
 }
 
 /* ==================== FOOTER ==================== */
