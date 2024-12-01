@@ -119,11 +119,13 @@ a { cursor: pointer; }
 .header-orange { color: var(--orange-600); }
 .header-white { color: white; }
 
-.bold-green {
-    font-weight: 600;
+.anchor-green {
     text-decoration: underline;
-    color: var(--green-500);
+    text-decoration-thickness: 2px;
+    color: var(--green-700);
 }
+
+.anchor-green:hover { color: var(--green-900); }
 
 .bold-normal { font-weight: 600; }
 
@@ -309,8 +311,6 @@ header {
     background-repeat: no-repeat;
 }
 
-.problems-section ul li:hover { color: var(--green-400); }
-
 /* ==================== SOLUTIONS-SECTION ==================== */
 
 .solutions-section {
@@ -410,7 +410,11 @@ header {
 
 .benefits-2-item div { padding-bottom: var(--gutter-row-3); }
 
-.benefits-2-item .benefits-info h6 { padding-top: var(--gutter-row-1); color: var(--green-600);  }
+.benefits-2-item .benefits-info h6 { 
+    padding-top: var(--gutter-row-1); 
+    color: var(--green-600);
+    text-decoration: underline;
+}
 
 /* ==================== MAIN ==================== */
 
