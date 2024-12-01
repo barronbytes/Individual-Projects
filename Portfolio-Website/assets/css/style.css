@@ -25,6 +25,11 @@ h6 { font-size: 2rem; font-family: Georgia, 'Times New Roman', Times, serif; lin
 
 a { cursor: pointer; }
 
+img {
+    display: block;
+    margin: 0 auto;
+}
+
 /* ==================== COLORS ==================== */
 
 :root {
@@ -215,28 +220,36 @@ header {
     height: var(--gutter-col-3);
 }
 
-.nav-menu {
+nav {
+    justify-self: end;
+}
+
+nav ul {
     display: flex;
     gap: var(--gutter-col-1);
-    justify-self: end; /* align horizontally */
+    justify-self: center;
     align-items: center;
 }
 
-.nav-item {
+nav ul li {
     display: flex;
     flex-direction: column;
-    row-gap: 4px;
+    gap: 4px;
     align-items: center;
     text-align: center;
 }
 
-.nav-item:hover {
+nav ul li img { display: block; }
+
+nav ul li:hover {
     color: var(--green-400);
 }
 
-.nav-menu > .nav-item:nth-child(5) img { background-color: var(--green-400); }
+nav ul li:nth-child(5) img {
+    background-color: var(--green-400);
+}
 
-.nav-menu > .nav-item:last-child img {
+nav ul li:last-child img {
     width: var(--gutter-col-3);
     height: var(--gutter-col-3);
 }
@@ -254,10 +267,10 @@ header {
     height: auto;
 }
 
-.hero-section div {
+.hero-section ul {
     max-width: var(--breakpoint-desktop);
     margin: 0 auto;
-    padding: 0 var(--gutter-col-padding);
+    padding: var(--gutter-row-5) var(--gutter-col-padding);
 
     display: flex;
     flex-direction: column;
@@ -265,12 +278,9 @@ header {
     text-align: center;
 }
 
-.hero-section div:first-child { padding: var(--gutter-row-5) 0 var(--gutter-row-2) 0; }
+.hero-section ul li:nth-child(2) { padding: var(--gutter-row-2) 0; }
 
-.hero-section div:last-child { 
-    padding: var(--gutter-row-2) 0 var(--gutter-row-5) 0; 
-    row-gap: var(--gutter-row-1);
-}
+.hero-section ul li:last-child { padding-top: var(--gutter-col-1); }
 
 /* ==================== PROBLEMS-SECTION ==================== */
 
