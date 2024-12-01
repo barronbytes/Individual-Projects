@@ -122,7 +122,7 @@ a { cursor: pointer; }
 .bold-green {
     font-weight: 600;
     text-decoration: underline;
-    color: var(--green-500)
+    color: var(--green-500);
 }
 
 .bold-normal { font-weight: 600; }
@@ -263,10 +263,10 @@ header {
     text-align: center;
 }
 
-.hero-section div:first-child { padding: var(--gutter-row-3) 0 var(--gutter-row-2) 0; }
+.hero-section div:first-child { padding: var(--gutter-row-5) 0 var(--gutter-row-2) 0; }
 
 .hero-section div:last-child { 
-    padding: var(--gutter-row-2) 0 var(--gutter-row-3) 0; 
+    padding: var(--gutter-row-2) 0 var(--gutter-row-5) 0; 
     row-gap: var(--gutter-row-1);
 }
 
@@ -275,7 +275,7 @@ header {
 .problems-section {
     max-width:  var(--breakpoint-tablet);
     margin: 0 auto;
-    padding: var(--gutter-row-3) var(--gutter-col-padding);
+    padding: var(--gutter-row-5) var(--gutter-col-padding);
 
     display: flex;
     flex-direction: row;
@@ -315,7 +315,7 @@ header {
 
 .solutions-section {
     display: block;
-    padding: var(--gutter-row-3) 0 188px 0;
+    padding: var(--gutter-row-5) 0 188px 0;
     background-color: var(--green-200);
 }
 
@@ -410,7 +410,7 @@ header {
 
 .benefits-2-item div { padding-bottom: var(--gutter-row-3); }
 
-.benefits-2-item .benefits-info h6 { padding-top: var(--gutter-row-1);  }
+.benefits-2-item .benefits-info h6 { padding-top: var(--gutter-row-1); color: var(--green-600);  }
 
 /* ==================== MAIN ==================== */
 
@@ -421,6 +421,8 @@ main {
     padding: var(--gutter-row-5) var(--gutter-col-padding);
     text-align: center;
 }
+
+/* ==================== PORTFOLIO-SECTION */
 
 .portfolio-1 { 
     margin-bottom: var(--gutter-row-5);
@@ -451,7 +453,7 @@ main {
     height: var(--image-col-3);
     padding: 0 var(--gutter-col-1);
     background-color: var(--gray-900);
-    color: var(--gray-100);
+    color: var(--orange-400);
 
     display: flex;
     flex-direction: column;
@@ -461,6 +463,59 @@ main {
     text-align: center; /* center TEXT horizontally */
     display: none; /* hidden by default */
 }
+
+.project-2 h6 { line-height: 1.5; }
+
+/* ==================== TESTIMONIAL-SECTION */
+
+.testimonials-section {
+    margin-top: var(--gutter-row-5);
+    border-top: 1px solid var(--gray-400);
+    padding-top: var(--gutter-row-5);
+}
+
+.testimonials-1 {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gutter-row-1);
+    padding-bottom: var(--gutter-row-3);
+}
+
+.quote {
+    display: flex;
+    flex-direction: row;
+    column-gap: var(--gutter-col-1);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.quote-1, .quote-3 {
+    min-width: var(--gutter-col-1);
+    min-height: var(--gutter-col-1);
+    max-width: var(--gutter-col-3);
+    max-height: var(--gutter-col-3);
+}
+
+.quote-1:hover, .quote-3:hover { background-color: var(--green-400); }
+
+.quote-2 { width: var(--breakpoint-six); }
+
+.quote-2 img {
+    width: var(--image-col-2);
+    height: var(--image-col-2);
+    justify-self: center;
+}
+
+.quote-2 blockquote { 
+    margin: var(--gutter-row-2) 0;
+    border-left: var(--gutter-row-padding) solid var(--green-400);
+    padding: var(--gutter-row-1);
+}
+
+.quote-2 h6 { padding-bottom: var(--gutter-row-padding); }
+
+.quote-2 p { font-style: italic; }
 
 /* ==================== FOOTER ==================== */
 
