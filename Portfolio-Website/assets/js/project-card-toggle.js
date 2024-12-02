@@ -1,25 +1,47 @@
-// Select all the project groups
-const PROJECT_GROUPS = document.querySelectorAll(".project.group");
+document.addEventListener("DOMContentLoaded", () => {
+    const LIST_ITEMS = document.querySelectorAll(".portfolio-2 .group");
 
-// Loop through each project group
-PROJECT_GROUPS.forEach(projectGroup => {
-    const PROJECT_1 = projectGroup.querySelector(".project-1");
-    const PROJECT_1_IMAGE = PROJECT_1.querySelector("img"); // Not used in your current logic, but it's here if needed
-    const PROJECT_2 = projectGroup.querySelector(".project-2");
+    LIST_ITEMS.forEach((item) => {
+        const originalImage = item.querySelector("a"); // Target the original content
+        const originalContent = item.innerHTML; // Save the original structure
 
-    // Show PROJECT-2 and hide PROJECT-1
-    function ShowProject2() {
-        PROJECT_1.style.display = "none";
-        PROJECT_2.style.display = "flex"; 
+        // Define new content
+        const newContent = `
+            <div class="project-item" aria-live="polite" role="region">
+                <h6>Adipiscing, elit sapien hendrerit vulputate vehicula.</h6>
+                <a class="button footer-cta" href="#" title="Check Out The Details">Open My Project</a>
+            </div>
+        `;
+
+        // Add event listeners for hover, focus, and touch interactions
+        item.addEventListener("mouseenter", () => toggleContent(item, originalImage, newContent));
+        item.addEventListener("mouseleave", () => revertContent(item, originalImage, originalContent));
+        item.addEventListener("focus", () => toggleContent(item, originalImage, newContent));
+        item.addEventListener("blur", () => revertContent(item, originalImage, originalContent));
+    });
+
+    function toggleContent(item, originalImage, newContent) {
+        if (item.getAttribute("aria-expanded") === "true") return;
+
+        // Hide the original image
+        originalImage.style.display = "none";
+
+        // Add the new content
+        item.setAttribute("aria-expanded", "true");
+        item.insertAdjacentHTML("beforeend", newContent);
     }
 
-    // Hide PROJECT-2 and show PROJECT-1
-    function HideProject2() {
-        PROJECT_1.style.display = "block";
-        PROJECT_2.style.display = "none";
-    }
+    function revertContent(item, originalImage, originalContent) {
+        if (item.getAttribute("aria-expanded") === "false") return;
 
-    // Add event listeners for each project group
-    PROJECT_1.addEventListener("mouseenter", ShowProject2);
-    PROJECT_2.addEventListener("mouseleave", HideProject2);
+        // Show the original image
+        originalImage.style.display = "";
+
+        // Remove the added content
+        const projectItem = item.querySelector(".project-item");
+        if (projectItem) projectItem.remove();
+
+        // Reset the attributes
+        item.setAttribute("aria-expanded", "false");
+    }
 });

@@ -30,6 +30,8 @@ img {
     margin: 0 auto;
 }
 
+.hidden { display: none; }
+
 /* ==================== COLORS ==================== */
 
 :root {
@@ -452,7 +454,7 @@ main {
     display: block; /* avoid inline spacing issues */   
 }
 
-.project {
+.project-item {
     width: 100%;
     height: var(--image-col-3);
     padding: var(--gutter-col-1);
@@ -467,7 +469,7 @@ main {
     text-align: center; /* center TEXT horizontally */
 }
 
-.project h6 { line-height: 1.5; }
+.project-item h6 { line-height: 1.5; }
 
 /* ==================== TESTIMONIALS-SECTION */
 
