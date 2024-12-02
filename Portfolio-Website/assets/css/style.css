@@ -374,7 +374,6 @@ nav ul li:last-child img {
     padding: 0 var(--gutter-col-padding);
     border: 1px solid var(--gray-500);
     border-radius: 5px;
-    padding: 0 var(--gutter-col-padding);
     box-shadow: 0px 6px 32px -10px var(--gray-300);
     background-color: white;
     text-align: center;
@@ -383,45 +382,34 @@ nav ul li:last-child img {
     grid-template-columns: 1fr;
 }
 
-.benefits {
-    display: flex;
-    flex-direction: column;
-}
-
-.benefits img {
-    width: var(--gutter-row-5);
-    height: auto; 
-}
-
-.benefits-1 { margin: var(--gutter-row-3) 0 var(--gutter-row-2) 0; }
+.benefits-1 { margin: var(--gutter-row-3) 0; }
 
 .benefits-2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
-.benefits-2 div {
-    padding: 0 var(--gutter-col-1);
+.benefits-2 img {
+    width: var(--gutter-row-5);
+    height: auto;
 }
 
-.benefits-2-item:nth-child(2) {
+.benefits-2 > li { padding: 0 var(--gutter-col-1); }
+
+.benefits-2 > li:nth-child(2) {
     border-left: 1px solid var(--gray-500);
-    border-right: 1px solid var(--gray-500);
+    border-right: 1px solid var(--gray-500);   
 }
 
-.benefits-2-item div:first-child {
-    margin-top: var(--gutter-row-2);
+.benefits-item {
+    padding: var(--gutter-row-3) 0;
     display: flex;
     flex-direction: column;
-    row-gap: var(--gutter-row-1);
-    align-items: center;
-    text-align: center;
+    row-gap: var(--gutter-col-2);
 }
 
-.benefits-2-item div { padding-bottom: var(--gutter-row-3); }
-
-.benefits-2-item .benefits-info h6 { 
-    padding-top: var(--gutter-row-1); 
+.benefits-item li:first-child h6 {
+    padding: var(--gutter-row-1) 0;
     color: var(--green-600);
     text-decoration: underline;
 }
@@ -438,9 +426,13 @@ main {
 
 /* ==================== PORTFOLIO-SECTION */
 
-.portfolio-1 { 
-    margin-bottom: var(--gutter-row-5);
+.portfolio-section {
+    max-width: var(--breakpoint-desktop);
+    padding: var(--gutter-row-5) 0;
+}
 
+.portfolio-1 { 
+    padding-bottom: var(--gutter-row-5);
     display: flex; 
     flex-direction: column; 
     row-gap: var(--gutter-row-1); 
@@ -453,19 +445,17 @@ main {
     row-gap: var(--gutter-col-1);
 }
 
-.project-1 { display: block; }
-
-.project-1 img {
+.portfolio-2 li img {
     width: 100%;
     height: var(--image-col-3);
     object-fit: cover; /* maintain aspect ratio */
-    display: block; /* avoid inline spacing issues */
+    display: block; /* avoid inline spacing issues */   
 }
 
-.project-2 {
+.project {
     width: 100%;
     height: var(--image-col-3);
-    padding: 0 var(--gutter-col-1);
+    padding: var(--gutter-col-1);
     background-color: var(--gray-900);
     color: var(--orange-400);
 
@@ -475,10 +465,9 @@ main {
     justify-content: center; /* center item vertically */
     align-items: center; /* center item horizontally */
     text-align: center; /* center TEXT horizontally */
-    display: none; /* hidden by default */
 }
 
-.project-2 h6 { line-height: 1.5; }
+.project h6 { line-height: 1.5; }
 
 /* ==================== TESTIMONIALS-SECTION */
 
