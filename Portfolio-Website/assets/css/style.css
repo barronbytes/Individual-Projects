@@ -340,18 +340,18 @@ nav ul li:last-child img {
     align-items: center;
 }
 
-.solutions div {
+.solutions-1, .solutions-2 {
     display: flex;
     flex-direction: column;
     row-gap: var(--gutter-col-1);
 }
 
-.solutions h6 {
+.solutions-1 h6 {
     margin-top: var(--backup-row-1); 
     line-height: 1.5; 
 }
 
-.solutions img {
+.solutions-2 img {
     width: var(--image-col-2);
     height: auto;
 }
@@ -432,7 +432,7 @@ main {
     display: block;
     max-width: var(--breakpoint-desktop);
     margin: 0 auto;
-    padding: var(--gutter-row-5) var(--gutter-col-padding);
+    padding: 0 var(--gutter-col-padding);
     text-align: center;
 }
 
@@ -480,60 +480,62 @@ main {
 
 .project-2 h6 { line-height: 1.5; }
 
-/* ==================== TESTIMONIAL-SECTION */
+/* ==================== TESTIMONIALS-SECTION */
 
 .testimonials-section {
-    margin-top: var(--gutter-row-5);
+    width: 100%;
+    max-width: var(--breakpoint-desktop);
     border-top: 1px solid var(--gray-400);
-    padding-top: var(--gutter-row-5);
-
+    padding: var(--gutter-row-5) 0;
+    
     display: flex;
     flex-direction: column;
-    row-gap: var(--gutter-row-3);
-}
-
-.testimonials-1, .testimonials-2 {
-    display: flex;
-    flex-direction: column;
-    row-gap: var(--gutter-row-1);
-    justify-content: center;
+    justify-self: center;
     align-items: center;
-    text-align: center;
 }
 
-.quote-1 img {
+.testimonials-1 { margin-bottom: var(--gutter-row-5); }
+
+.testimonials-1 h2 { margin-bottom: var(--gutter-row-1); }
+
+.testimonials-2 {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gutter-col-2);
+}
+
+.testimonials-2 .img-bigger {
     width: var(--image-col-2);
-    height: var(--image-col-2); 
+    height: var(--image-col-2);    
 }
 
-.quote-2 { 
-    width: var(--breakpoint-six);
-
-    display: flex;
-    flex-direction: row;
-    column-gap: var(--gutter-col-padding);
-    align-items: center;
-}
-
-.quote-2 img {
+.testimonials-2 .img-smaller {
     min-width: var(--gutter-col-1);
     min-height: var(--gutter-col-1);
     max-width: var(--gutter-col-3);
     max-height: var(--gutter-col-3);
+
 }
 
-.quote-2 img:hover { background-color: var(--green-400); }
+.testimonials-2 .img-smaller:hover { background-color: var(--green-400); }
 
-.quote-2 blockquote {
-    margin: var(--gutter-row-1) 0 var(--gutter-row-padding) 0; 
+.testimonials-2 li:nth-child(2) {
+    width: var(--breakpoint-six);
+
+    display: flex;
+    flex-direction: row;
+    column-gap: var(--gutter-col-1);
+    align-items: center;
+}
+
+.testimonials-2 li:nth-child(2) blockquote {
     border-left: var(--gutter-row-padding) solid var(--green-400);
     padding: var(--gutter-row-1);
 }
 
-.quote-3 p { 
-    padding-top: var(--gutter-row-1);
-    font-style: italic; 
-}
+.testimonials-2 li:last-child h6 { margin: var(--backup-row-0) 0 var(--gutter-row-1) 0; }
+
+.testimonials-2 li:last-child p { font-style: italic; }
 
 /* ==================== FOOTER ==================== */
 
@@ -543,10 +545,27 @@ footer {
     color: var(--gray-400);
 }
 
-.footer {
+footer img { background-color: var(--gray-400); }
+
+footer img:hover { background-color: var(--green-400); }
+
+footer .img-bigger {
+    width: var(--gutter-col-4);
+    height: var(--gutter-col-4);
+}
+
+
+footer .img-smaller {
+    width: var(--gutter-col-2);
+    height: var(--gutter-col-2);
+}
+
+footer .button { margin-top: var(--gutter-row-2); }
+
+footer ul {
     max-width: var(--breakpoint-desktop);
     margin: 0 auto;
-    padding: var(--gutter-row-3) var(--gutter-col-padding);
+    padding: var(--gutter-row-5) var(--gutter-col-padding);
 
     display: flex;
     flex-direction: column;
@@ -554,40 +573,10 @@ footer {
     text-align: center;
 }
 
-.footer div:nth-child(2) { margin: var(--gutter-row-2) 0; }
+footer ul li:nth-child(2) { margin: var(--gutter-row-2) 0; }
 
-.footer-1 img {
-    width: var(--gutter-col-4);
-    height: var(--gutter-col-4);
-    position: relative;
-    background-color: var(--gray-400);
-    justify-self: center;
-}
-
-.footer-1 img:hover { background-color: var(--green-400); }
-
-.footer-2 {
-    display: flex;
-    flex-direction: column;
-    row-gap: var(--gutter-row-1);
-    align-items:center;
-    text-align: center;
-}
-
-.footer-2 a {
-    margin: var(--gutter-row-1) 0;
-}
-
-.footer-3 {
+footer ul li:last-child {
     display: flex;
     flex-direction: row;
     column-gap: var(--gutter-col-1);
 }
-
-.footer-3 img {
-    width: var(--gutter-col-2);
-    height: var(--gutter-col-2);   
-    background-color: var(--gray-400); 
-}
-
-.footer-3 img:hover { background-color: var(--green-400); }
