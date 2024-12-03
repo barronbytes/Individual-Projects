@@ -394,6 +394,7 @@ nav ul li:last-child img {
 .benefits-2 img {
     width: var(--gutter-row-5);
     height: auto;
+    padding-bottom: var(--gutter-row-2);
 }
 
 .benefits-2 > li { padding: 0 var(--gutter-col-1); }
