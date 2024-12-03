@@ -1,45 +1,50 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const LIST_ITEMS = document.querySelectorAll(".portfolio-2 .group");
+    const PORTFOLIO_ITEMS = document.querySelectorAll(".portfolio-2 .group");
 
-    LIST_ITEMS.forEach((item) => {
-        const originalImage = item.querySelector("a"); // Target the original content
-        const originalContent = item.innerHTML; // Save the original structure
+    PORTFOLIO_ITEMS.forEach((item) => {
+        const PORTFOLIO_IMAGE = item.querySelector("a"); // Target the original content
+        const PORTFOLIO_INFO = item.querySelector(".project-item-default"); // Target the PORTFOLIO_INFO element
 
         // Define new content
-        const newContent = `
-            <div class="project-item" aria-live="polite" role="region">
-                <h6>Adipiscing, elit sapien hendrerit vulputate vehicula.</h6>
-                <a class="button footer-cta" href="#" title="Check Out The Details">Open My Project</a>
-            </div>
+        const DYNAMIC_CONTENT = `
+            <h6>Adipiscing, elit sapien hendrerit vulputate vehicula.</h6>
+            <a class="button footer-cta" href="#" title="Check Out The Details">Open My Project</a>
         `;
 
         // Add event listeners for hover, focus, and touch interactions
-        item.addEventListener("mouseenter", () => toggleContent(item, originalImage, newContent));
-        item.addEventListener("mouseleave", () => revertContent(item, originalImage, originalContent));
-        item.addEventListener("focus", () => toggleContent(item, originalImage, newContent));
-        item.addEventListener("blur", () => revertContent(item, originalImage, originalContent));
+        item.addEventListener("mouseenter", () => toggleContent(item, PORTFOLIO_IMAGE, PORTFOLIO_INFO, DYNAMIC_CONTENT));
+        item.addEventListener("mouseleave", () => revertContent(item, PORTFOLIO_IMAGE, PORTFOLIO_INFO));
+        item.addEventListener("focus", () => toggleContent(item, PORTFOLIO_IMAGE, PORTFOLIO_INFO, DYNAMIC_CONTENT));
+        item.addEventListener("blur", () => revertContent(item, PORTFOLIO_IMAGE, PORTFOLIO_INFO));
     });
 
-    function toggleContent(item, originalImage, newContent) {
+    function toggleContent(item, PORTFOLIO_IMAGE, PORTFOLIO_INFO, DYNAMIC_CONTENT) {
         if (item.getAttribute("aria-expanded") === "true") return;
 
         // Hide the original image
-        originalImage.style.display = "none";
+        PORTFOLIO_IMAGE.style.display = "none";
 
-        // Add the new content
+        // Update PORTFOLIO_INFO content and switch class
+        PORTFOLIO_INFO.innerHTML = DYNAMIC_CONTENT;
+        PORTFOLIO_INFO.classList.remove("project-item-default");
+        PORTFOLIO_INFO.classList.add("project-item");
+        PORTFOLIO_INFO.setAttribute("aria-hidden", "false");
+
+        // Update item attributes
         item.setAttribute("aria-expanded", "true");
-        item.insertAdjacentHTML("beforeend", newContent);
     }
 
-    function revertContent(item, originalImage, originalContent) {
+    function revertContent(item, PORTFOLIO_IMAGE, PORTFOLIO_INFO) {
         if (item.getAttribute("aria-expanded") === "false") return;
 
         // Show the original image
-        originalImage.style.display = "";
+        PORTFOLIO_IMAGE.style.display = "";
 
-        // Remove the added content
-        const projectItem = item.querySelector(".project-item");
-        if (projectItem) projectItem.remove();
+        // Clear PORTFOLIO_INFO content and reset class
+        PORTFOLIO_INFO.innerHTML = "";
+        PORTFOLIO_INFO.classList.remove("project-item");
+        PORTFOLIO_INFO.classList.add("project-item-default");
+        PORTFOLIO_INFO.setAttribute("aria-hidden", "true");
 
         // Reset the attributes
         item.setAttribute("aria-expanded", "false");

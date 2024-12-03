@@ -454,6 +454,10 @@ main {
     display: block; /* avoid inline spacing issues */   
 }
 
+.project-item-default {
+    display: none;
+}
+
 .project-item {
     width: 100%;
     height: var(--image-col-3);
