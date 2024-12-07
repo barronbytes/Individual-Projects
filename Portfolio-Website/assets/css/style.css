@@ -35,11 +35,12 @@ img {
 /* ==================== COLORS ==================== */
 
 :root {
-    --breakpoint-mobile: 320px; /* 4 columns */
-    --breakpoint-six: 480px; /* 6 columns */
-    --breakpoint-tablet: 720px; /* 9 columns */
-    --breakpoint-laptop: 960px; /* 12 columns */
-    --breakpoint-desktop: 1120px; /* 14 columns */
+    --breakpoint-4: 320px; /* 4 columns, mobile-portrait */
+    --breakpoint-5: 540px;
+    --breakpoint-6: 480px; /* 6 columns, mobile-landscape */
+    --breakpoint-9: 720px; /* 9 columns, tablet-portrait */
+    --breakpoint-12: 960px; /* 12 columns, tablet-landscape */
+    --breakpoint-14: 1120px; /* 14 columns, laptop-small */
     
     /* Spacers */
     --gutter-col-padding: 10px;
@@ -185,75 +186,77 @@ img {
 /* ==================== HEADER ==================== */
 
 header {
-    display: block;
+    width: 100%;
+    position: sticky;
+    top: 0;
     border-bottom: solid 1px var(--gray-400);
     background-color: var(--gray-900);
     color: var(--gray-400);
+    display: block;
 }
 
-.header {
-    max-width: var(--breakpoint-desktop);
-    margin: 0 auto;
-    padding: var(--gutter-row-1) var(--gutter-col-padding);
-
-    display: grid;
-    grid-template-columns: var(--gutter-col-3) auto;
-    column-gap: var(--gutter-col-1);
-}
-
-.header img {
-    width: var(--gutter-col-2);
-    height: var(--gutter-col-2);
+header img {
+    width: var(--gutter-col-3);
+    height: var(--gutter-col-3);
     position: relative;
     background-color: var(--gray-100);
 }
 
-.header img:hover {
+header img:hover {
     background-color: var(--green-400);
 }
 
-.nav-logo {
-    display: flex;
-    align-items: center;
-}
+.header {
+    max-width: var(--breakpoint-14);
+    margin: 0 auto;
+    padding: var(--gutter-row-1) var(--gutter-col-padding);
 
-.nav-logo img {
-    width: var(--gutter-col-3);
-    height: var(--gutter-col-3);
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: var(--gutter-col-1);
 }
 
 nav {
-    justify-self: end;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-nav ul {
+nav ul.menu-normal img {
+    width: var(--gutter-col-2);
+    height: var(--gutter-col-2);
+}
+
+.menu-normal {
     display: flex;
     gap: var(--gutter-col-1);
+}
+
+.menu-normal li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
     justify-self: center;
     align-items: center;
 }
 
-nav ul li {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    align-items: center;
-    text-align: center;
-}
+nav ul li:hover { color: var(--green-400); }
 
-nav ul li img { display: block; }
+nav ul.menu-mobile { display: none; }
 
-nav ul li:hover {
-    color: var(--green-400);
-}
+@media (max-width: 540px) {
+    nav ul.menu-normal { display: none; }
 
-nav ul li:nth-child(5) img {
-    background-color: var(--green-400);
-}
+    nav ul.menu-mobile {
+        display: flex;
+        position: absolute;
+        top: var(--gutter-row-1);
+        right: var(--gutter-col-padding);
+    }
 
-nav ul li:last-child img {
-    width: var(--gutter-col-3);
-    height: var(--gutter-col-3);
+    .nav-toggle { display: inline-block; }
 }
 
 /* ==================== HERO-SECTION ==================== */
@@ -270,7 +273,7 @@ nav ul li:last-child img {
 }
 
 .hero-section ul {
-    max-width: var(--breakpoint-desktop);
+    max-width: var(--breakpoint-14);
     margin: 0 auto;
     padding: var(--gutter-row-5) var(--gutter-col-padding);
 
@@ -287,7 +290,7 @@ nav ul li:last-child img {
 /* ==================== PROBLEMS-SECTION ==================== */
 
 .problems-section {
-    max-width:  var(--breakpoint-tablet);
+    max-width:  var(--breakpoint-9);
     margin: 0 auto;
     padding: var(--gutter-row-5) var(--gutter-col-padding);
 
@@ -332,7 +335,7 @@ nav ul li:last-child img {
 }
 
 .solutions {
-    max-width: var(--breakpoint-tablet);
+    max-width: var(--breakpoint-9);
     margin: 0 auto;
     padding: 0 var(--gutter-col-padding);    
 
@@ -371,7 +374,7 @@ nav ul li:last-child img {
 /* ==================== BENEFITS-SECTION ==================== */
 
 .benefits-section {
-    max-width: var(--breakpoint-desktop);
+    max-width: var(--breakpoint-14);
     margin: -140px auto 0 auto;
     padding: 0 var(--gutter-col-padding);
     border: 1px solid var(--gray-500);
@@ -421,7 +424,7 @@ nav ul li:last-child img {
 
 main {
     display: block;
-    max-width: var(--breakpoint-desktop);
+    max-width: var(--breakpoint-14);
     margin: 0 auto;
     padding: 0 var(--gutter-col-padding);
     text-align: center;
@@ -430,7 +433,7 @@ main {
 /* ==================== PORTFOLIO-SECTION */
 
 .portfolio-section {
-    max-width: var(--breakpoint-desktop);
+    max-width: var(--breakpoint-14);
     padding: var(--gutter-row-5) 0;
 }
 
@@ -480,7 +483,7 @@ main {
 
 .testimonials-section {
     width: 100%;
-    max-width: var(--breakpoint-desktop);
+    max-width: var(--breakpoint-14);
     border-top: 1px solid var(--gray-400);
     padding: var(--gutter-row-5) 0;
     
@@ -516,7 +519,7 @@ main {
 .testimonials-2 .img-smaller:hover { background-color: var(--green-400); }
 
 .testimonials-2 li:nth-child(2) {
-    width: var(--breakpoint-six);
+    width: var(--breakpoint-6);
 
     display: flex;
     flex-direction: row;
@@ -559,7 +562,7 @@ footer .img-smaller {
 footer .button { margin-top: var(--gutter-row-2); }
 
 footer ul {
-    max-width: var(--breakpoint-desktop);
+    max-width: var(--breakpoint-14);
     margin: 0 auto;
     padding: var(--gutter-row-5) var(--gutter-col-padding);
 
