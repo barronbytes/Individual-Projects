@@ -360,9 +360,9 @@ nav ul.menu-mobile { display: none; }
     line-height: 1.5;     
 }
 
-@media (max-width: 600px) {
+@media (max-width: 680px) {
     .problems-section {
-        padding: var(--gutter-row-5) var(--gutter-col-padding);
+        padding: var(--gutter-row-5) var(--gutter-col-2);
 
         display: flex;
         flex-direction: column;
@@ -375,25 +375,27 @@ nav ul.menu-mobile { display: none; }
     .problems-1, .problems-2 { justify-self: center; }
 
     .problems-2 .section-title, .problems-2 .section-subtitle { text-align: center; }
+
+    .problems-2 .section-subtitle { margin: 0 0 var(--gutter-row-1) 0; }
 }
 
 /* ==================== SOLUTIONS-SECTION ==================== */
 
 .solutions-section {
     display: block;
-    padding: var(--gutter-row-5) 0 188px 0;
     background-color: var(--green-200);
 }
 
 .solutions {
-    max-width: var(--breakpoint-9);
+    max-width:  var(--breakpoint-9);
     margin: 0 auto;
-    padding: 0 var(--gutter-col-padding);    
+    padding: var(--gutter-row-5) var(--gutter-col-padding) 188px var(--gutter-col-padding);
 
-    display: grid;
-    grid-template-columns: 1fr auto;
-    column-gap: var(--gutter-col-3);
-    align-items: center;
+    display: flex;
+    flex-direction: row;
+    column-gap: var(--gutter-col-2);
+    justify-content: space-between;
+    align-items: center; /* vertical alignment */
 }
 
 .solutions-1, .solutions-2 {
@@ -402,13 +404,13 @@ nav ul.menu-mobile { display: none; }
     row-gap: var(--gutter-col-1);
 }
 
-.solutions-1 h6 {
+.solutions-1 .section-subtitle {
     margin-top: var(--backup-row-1); 
-    line-height: 1.5; 
+    line-height: 1.5;     
 }
 
-.solutions-2 img {
-    width: var(--image-col-2);
+.solutions-figure {
+    width: 580px; /* bug: could not set width normally with flex-shrink: 0 */
     height: auto;
 }
 
@@ -420,6 +422,28 @@ nav ul.menu-mobile { display: none; }
 .solutions-cta:hover {
     background-color: var(--gray-900);
     color: var(--green-400);
+}
+
+@media (max-width: 1120px) {
+    .solutions { padding: var(--gutter-row-5) var(--gutter-col-2); }
+
+    #explore { margin: 0; padding: 0; }
+}
+
+@media (max-width: 680px) {
+    .solutions {
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--gutter-row-2);
+        justify-content: center;
+        text-align: center;
+    }
+
+    .solutions-figure { margin-top: var(--gutter-row-1); width: var(--image-col-2); }
+
+    .solutions-1, .solutions-2 { justify-self: center; }
+
+    .solutions-1 .section-subtitle { margin: 0 0 var(--gutter-row-1) 0; }
 }
 
 /* ==================== BENEFITS-SECTION ==================== */
