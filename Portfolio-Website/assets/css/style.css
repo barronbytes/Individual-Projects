@@ -144,6 +144,26 @@ img {
 
 .highlight-orange { color: var(--orange-400); }
 
+/* ==================== MEDIA QUERIES ==================== */
+
+@media (max-width: 800px) {
+    h1 { font-size: 3.8rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
+    h2 { font-size: 3.4rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
+    h3 { font-size: 3.0rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
+    h4 { font-size: 2.6rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
+    h5 { font-size: 2.2rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
+    h6 { font-size: 1.8rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
+}
+
+@media (max-width: 400px) {
+    h1 { font-size: 2.8rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
+    h2 { font-size: 2.6rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
+    h3 { font-size: 2.4rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
+    h4 { font-size: 2.2rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
+    h5 { font-size: 2.0rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
+    h6 { font-size: 1.8rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
+}
+
 /* ==================== COMPONENTS ==================== */
 
 .button {
@@ -224,6 +244,8 @@ nav {
     align-items: center;
 }
 
+nav ul li:hover { color: var(--green-400); }
+
 nav ul.menu-normal img {
     width: var(--gutter-col-2);
     height: var(--gutter-col-2);
@@ -241,8 +263,6 @@ nav ul.menu-normal img {
     justify-self: center;
     align-items: center;
 }
-
-nav ul li:hover { color: var(--green-400); }
 
 nav ul.menu-mobile { display: none; }
 
@@ -559,8 +579,6 @@ footer .img-smaller {
     height: var(--gutter-col-2);
 }
 
-footer .button { margin-top: var(--gutter-row-2); }
-
 footer ul {
     max-width: var(--breakpoint-14);
     margin: 0 auto;
@@ -572,7 +590,9 @@ footer ul {
     text-align: center;
 }
 
-footer ul li:nth-child(2) { margin: var(--gutter-row-2) 0; }
+footer ul li:nth-child(2) { margin: var(--gutter-row-3) 0; }
+
+footer ul li:nth-child(2) p { margin: var(--gutter-row-1) 0 var(--gutter-row-3) 0; }
 
 footer ul li:last-child {
     display: flex;
