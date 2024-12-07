@@ -123,6 +123,9 @@ img {
    --orange-900: #332106;
 }
 
+.section-title { font-size: 4.4rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; font-weight: 700; }
+.section-subtitle { font-size: 2.0rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; font-weight: 700; }
+
 .header-green { color: var(--green-400) }
 .header-orange { color: var(--orange-600); }
 .header-white { color: white; }
@@ -147,21 +150,25 @@ img {
 /* ==================== MEDIA QUERIES ==================== */
 
 @media (max-width: 800px) {
-    h1 { font-size: 3.8rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
-    h2 { font-size: 3.4rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
-    h3 { font-size: 3.0rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
-    h4 { font-size: 2.6rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
-    h5 { font-size: 2.2rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
-    h6 { font-size: 1.8rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
+    h1 { font-size: 3.8rem; }
+    h2 { font-size: 3.4rem; }
+    h3 { font-size: 3.0rem; }
+    h4 { font-size: 2.6rem; }
+    h5 { font-size: 2.2rem; }
+    h6 { font-size: 1.8rem; }
+    .section-title { font-size: 3.4rem; }
+    .section-subtitle { font-size: 1.8rem; }
 }
 
 @media (max-width: 400px) {
-    h1 { font-size: 2.8rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
-    h2 { font-size: 2.6rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
-    h3 { font-size: 2.4rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
-    h4 { font-size: 2.2rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
-    h5 { font-size: 2.0rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
-    h6 { font-size: 1.8rem; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1; }
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.6rem; }
+    h3 { font-size: 2.4rem; }
+    h4 { font-size: 2.2rem; }
+    h5 { font-size: 2.0rem; }
+    h6 { font-size: 1.8rem; }
+    .section-title { font-size: 3.4rem; }
+    .section-subtitle { font-size: 1.8rem; }
 }
 
 /* ==================== COMPONENTS ==================== */
@@ -316,20 +323,9 @@ nav ul.menu-mobile { display: none; }
 
     display: flex;
     flex-direction: row;
-    column-gap: var(--gutter-col-3);
-    align-items:center; /* center vertically */
-    justify-content: center; /* center horizontally */
-}
-
-.problems-section div {
-    display: flex;
-    flex-direction: column;
-    row-gap: var(--gutter-col-1);
-}
-
-.problems-section h6 {
-    margin-top: var(--backup-row-1); 
-    line-height: 1.5; 
+    column-gap: var(--gutter-col-2);
+    justify-content: space-between;
+    align-items: center; /* vertical alignment */
 }
 
 .problems-section img {
@@ -337,13 +333,48 @@ nav ul.menu-mobile { display: none; }
     height: auto;
 }
 
-.problems-section ul li {
+.problems-1 {
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+}
+
+.problems-2 {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gutter-col-1);
+    justify-self: flex-end;
+}
+
+.problems-2 ul li {
     margin-bottom: var(--gutter-row-padding);
     padding-left: 36px;
     background-image: url("../images/problems-star-orange.png");
     background-size: var(--gutter-row-2) var(--gutter-row-2);
     background-position: left center;
     background-repeat: no-repeat;
+}
+
+.problems-2 .section-subtitle {
+    margin-top: var(--backup-row-1); 
+    line-height: 1.5;     
+}
+
+@media (max-width: 600px) {
+    .problems-section {
+        padding: var(--gutter-row-5) var(--gutter-col-padding);
+
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--gutter-row-2);
+        justify-content: center;
+    }
+
+    .problems-section img { width: var(--image-col-2); }
+
+    .problems-1, .problems-2 { justify-self: center; }
+
+    .problems-2 .section-title, .problems-2 .section-subtitle { text-align: center; }
 }
 
 /* ==================== SOLUTIONS-SECTION ==================== */
