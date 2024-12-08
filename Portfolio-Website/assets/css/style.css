@@ -35,6 +35,7 @@ img {
 /* ==================== COLORS ==================== */
 
 :root {
+    --breakpoint-3: 240px;
     --breakpoint-4: 320px; /* 4 columns, mobile-portrait */
     --breakpoint-5: 540px;
     --breakpoint-6: 480px; /* 6 columns, mobile-landscape */
@@ -501,43 +502,51 @@ main {
     display: block;
     max-width: var(--breakpoint-14);
     margin: 0 auto;
-    padding: 0 var(--gutter-col-padding);
+    padding: 0;
     text-align: center;
 }
 
 /* ==================== PORTFOLIO-SECTION */
 
 .portfolio-section {
-    max-width: var(--breakpoint-14);
-    padding: var(--gutter-row-5) 0;
+    display: block;
+    width: 100%;
+    padding: var(--gutter-row-5) var(--gutter-col-padding);
 }
 
 .portfolio-1 { 
     padding-bottom: var(--gutter-row-5);
-    display: flex; 
+    display: flex;
     flex-direction: column; 
-    row-gap: var(--gutter-row-1); 
+    row-gap: var(--gutter-row-1);
 }
 
+.portfolio-1 li:last-child { margin-top: var(--backup-row-1); }
+
 .portfolio-2 {
+    max-width: var(--breakpoint-14);
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: var(--gutter-col-1);
     row-gap: var(--gutter-col-1);
+    justify-content: space-between;
+    justify-self: center;
+    align-items: center;
 }
 
 .portfolio-2 li img {
     width: 100%;
     height: var(--image-col-3);
     object-fit: cover; /* maintain aspect ratio */
-    display: block; /* avoid inline spacing issues */   
+    display: block; /* avoid inline spacing issues */
 }
 
-.project-item-default {
+.portfolio-2 li .project-item-default {
     display: none;
 }
 
-.project-item {
+.portfolio-2 li .project-item {
     width: 100%;
     height: var(--image-col-3);
     padding: var(--gutter-col-1);
@@ -547,20 +556,27 @@ main {
     display: flex;
     flex-direction: column;
     row-gap: var(--gutter-row-2);
-    justify-content: center; /* center item vertically */
-    align-items: center; /* center item horizontally */
-    text-align: center; /* center TEXT horizontally */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.project-item h6 { line-height: 1.5; }
+.project-item .section-subtitle { line-height: 1.5; }
+
+@media (max-width: 860px) {
+    .portfolio-2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 540px) {
+    .portfolio-2 { grid-template-columns: 1fr; }
+}
 
 /* ==================== TESTIMONIALS-SECTION */
 
 .testimonials-section {
     width: 100%;
-    max-width: var(--breakpoint-14);
     border-top: 1px solid var(--gray-400);
-    padding: var(--gutter-row-5) 0;
+    padding: var(--gutter-row-5) var(--gutter-col-padding);
     
     display: flex;
     flex-direction: column;

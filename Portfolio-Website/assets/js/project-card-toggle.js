@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Define new content
         const DYNAMIC_CONTENT = `
-            <h6>Adipiscing, elit sapien hendrerit vulputate vehicula.</h6>
+            <p class="section-subtitle">Adipiscing, elit sapien hendrerit vulputate vehicula.</p>
             <a class="button footer-cta" href="#" title="Check Out The Details">Open My Project</a>
         `;
 
