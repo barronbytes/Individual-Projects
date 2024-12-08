@@ -564,52 +564,48 @@ main {
     
     display: flex;
     flex-direction: column;
+    justify-content: center;
     justify-self: center;
     align-items: center;
 }
 
-.testimonials-1 { margin-bottom: var(--gutter-row-5); }
-
-.testimonials-1 h2 { margin-bottom: var(--gutter-row-1); }
-
-.testimonials-2 {
+.testimonials-1, .testimonials-2 {
     display: flex;
     flex-direction: column;
-    row-gap: var(--gutter-col-2);
-}
-
-.testimonials-2 .img-bigger {
-    width: var(--image-col-2);
-    height: var(--image-col-2);    
-}
-
-.testimonials-2 .img-smaller {
-    min-width: var(--gutter-col-1);
-    min-height: var(--gutter-col-1);
-    max-width: var(--gutter-col-3);
-    max-height: var(--gutter-col-3);
-
-}
-
-.testimonials-2 .img-smaller:hover { background-color: var(--green-400); }
-
-.testimonials-2 li:nth-child(2) {
-    width: var(--breakpoint-6);
-
-    display: flex;
-    flex-direction: row;
-    column-gap: var(--gutter-col-1);
+    row-gap: var(--gutter-row-1);
+    justify-content: center;
+    justify-self: center;
     align-items: center;
 }
 
-.testimonials-2 li:nth-child(2) blockquote {
-    border-left: var(--gutter-row-padding) solid var(--green-400);
-    padding: var(--gutter-row-1);
+.testimonials-1 li p.section-title { margin-bottom: var(--gutter-row-1); }
+
+.testimonials-2 li:first-child .img-bigger {
+    margin: var(--gutter-row-2) 0 var(--gutter-row-1) 0;
+    width: var(--image-col-2);
+    height: var(--image-col-2);
 }
 
-.testimonials-2 li:last-child h6 { margin: var(--backup-row-0) 0 var(--gutter-row-1) 0; }
+.testimonials-2 li:nth-child(2) blockquote {
+    min-width: var(--breakpoint-4);
+    max-width: var(--breakpoint-6);
+    border-left: var(--gutter-row-padding) solid var(--green-600);
+    padding: var(--gutter-row-1);
+    background-color: var(--orange-400);
+}
 
-.testimonials-2 li:last-child p { font-style: italic; }
+.testimonials-2 li:nth-child(3) { margin-top: var(--gutter-row-padding); }
+
+.testimonials-2 li:last-child {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.testimonials-2 li:last-child a { text-decoration: none; }
+
+.testimonials-2 li:last-child a:hover { text-decoration: underline; }
 
 /* ==================== FOOTER ==================== */
 
