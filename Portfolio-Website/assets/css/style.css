@@ -133,11 +133,27 @@ img {
 
 .anchor-green {
     text-decoration: underline;
-    text-decoration-thickness: 2px;
-    color: var(--green-700);
+    text-decoration-thickness: 1px;
+    color: var(--green-500);
+    font-weight: 700;
 }
 
-.anchor-green:hover { color: var(--green-900); }
+.anchor-green:hover {
+    text-decoration-thickness: 2px;
+    color: var(--green-700); 
+}
+
+.anchor-blue {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    color: var(--blue-400);
+    font-weight: 700;
+}
+
+.anchor-blue:hover { 
+    text-decoration-thickness: 2px;
+    color: var(--blue-600); 
+}
 
 .bold-normal { font-weight: 600; }
 
