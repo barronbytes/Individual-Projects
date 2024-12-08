@@ -8,29 +8,24 @@ FONT SIZE SYSTEM (px)
 MAIN COLOR:
 GRAY COLOR:
 ACCENT COLOR:
-
-RESPONSIVE BREAKPOINTS:
-Mobile 320px (4 columns)
-Tablet 720px (9 columns)
-Laptop 960px (12 columns)
-Desktop 1120px (14 columns)
 */
 
-/* Reset universal styles */
+/* reset universal styles */
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     border: 0;
     background: none;
-}
-
-*::before, *::after {
-    box-sizing: inherit;
-}    
+}   
 
 html {
-    font-size: 62.5%; /* Set 1rem to equal 10px for easier scaling */
+    font-size: 62.5%; /* set 1rem to equal 10px for easier scaling */
 }
 
 body {
@@ -40,6 +35,9 @@ body {
     font-weight: 400;
     color: black;
     background-color: #fff;
+
+    -webkit-font-smoothing: antialiased; /* improve text rendering on Webkit browsers */
+    -moz-osx-font-smoothing: grayscale; /* improve text rendering on Webkit browsers */
 }
     
 ul, ol, li {
@@ -59,9 +57,9 @@ button, input, textarea, select {
 }
 
 img, video {
-    max-width: 100%; /* Ensure media scales responsively */
+    max-width: 100%; /* ensure media scales responsively */
     height: auto;
-    display: block; /* **Prevent inline display gaps for media** */
+    display: block; /* **prevent inline display gaps for media** */
 }
 
 :focus {
@@ -69,8 +67,12 @@ img, video {
     box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5);
 }
 
-/* Accessibility improvements */
-body {
-    -webkit-font-smoothing: antialiased; /* Improve text rendering on Webkit browsers */
-    -moz-osx-font-smoothing: grayscale;
+/* remove animation for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
