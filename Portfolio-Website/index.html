@@ -16,7 +16,7 @@
                 <a href="#" title="Barron Bytes | Software Developer"><img src="assets/images/nav-b-outline.png" alt="Return to homepage."></a>
             </figure>
 
-            <nav aria-label="Main navigation">
+            <nav class="nav-normal" aria-label="Main navigation">
                 <ul class="menu-normal">
                     <li>
                         <a href="#" title="Return Home">
@@ -31,7 +31,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" title="Review My Portfolio Projects">
+                        <a href="#" title="Review My Source Code">
                             <img src="assets/images/nav-github.png" alt="" role="presentation">
                             <span>GitHub</span>
                         </a>
@@ -51,14 +51,31 @@
                 </ul>
                 <ul class="menu-mobile">
                     <li>
-                        <button class="nav-toggle" aria-label="toggle navigation">
-                            <img src="assets/images/nav-hamburger-icon.png" alt="Open the mobile menu.">
+                        <button class="nav-toggle" aria-controls="nav-mobile" aria-expanded="false">
+                            <img src="assets/images/nav-mobile-open.png" alt="Open the mobile menu.">
                         </button>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
+
+    <section class="mobile-section">
+        <nav id="nav-mobile" role="menu">
+            <button class="nav-toggle" aria-controls="nav-mobile" aria-expanded="true">
+                <img src="assets/images/nav-mobile-close.png" alt="Close the mobile menu.">
+            </button>
+
+            <ul class="section-subtitle">
+                <li><a href="#" title="Return Home">Home</a></li>
+                <li><a href="#" title="Check Out My Projects">Projects</a></li>
+                <li><a href="#" title="View My Work History">LinkedIn</a></li>
+                <li><a href="#" title="Review My Source Code">GitHub</a></li>
+                <li><a href="#" title="Check My Resume">Resume</a></li>
+                <li><a href="#" title="Contact Me">Contact</a></li>
+            </ul>
+        </nav>
+    </section>
 
     <section class="hero-section">
         <ul>
@@ -220,7 +237,7 @@
         </li>
         <li>
             <a href="#" title="View My Work History"><img class="img-smaller"  src="assets/images/nav-linkedin.png" alt="Open my LinkedIn."></a>
-            <a href="#" title="Review My Portfolio Projects"><img class="img-smaller"  src="assets/images/nav-github.png" alt="Open my GitHub."></a>
+            <a href="#" title="Review My Source Code"><img class="img-smaller"  src="assets/images/nav-github.png" alt="Open my GitHub."></a>
             <a href="#" title="Check My Resume"><img class="img-smaller"  src="assets/images/nav-resume.png" alt="Open my resume."></a>
         </li>
     </ul></footer>

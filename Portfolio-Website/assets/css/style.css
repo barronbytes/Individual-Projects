@@ -191,6 +191,13 @@ img {
     color: var(--gray-900);
 }
 
+.sr-only {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+}
+
 /* ==================== TEXT DECORATIONS */
 
 .section-title { font-size: 4.4rem; font-family: var(--ff-serif); line-height: 1; font-weight: 700; }
@@ -270,15 +277,15 @@ header img:hover {
     column-gap: var(--gutter-col-1);
 }
 
-nav {
+.nav-normal {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-nav ul li:hover { color: var(--green-400); }
+.nav-normal ul li:hover { color: var(--green-400); }
 
-nav ul.menu-normal img {
+.nav-normal ul.menu-normal img {
     width: var(--gutter-col-2);
     height: var(--gutter-col-2);
 }
@@ -296,12 +303,12 @@ nav ul.menu-normal img {
     align-items: center;
 }
 
-nav ul.menu-mobile { display: none; }
+.nav-normal ul.menu-mobile { display: none; }
 
 @media (max-width: 54rem) {
-    nav ul.menu-normal { display: none; }
+    .nav-normal ul.menu-normal { display: none; }
 
-    nav ul.menu-mobile {
+    .nav-normal ul.menu-mobile {
         display: flex;
         position: absolute;
         top: var(--gutter-row-1);
@@ -309,6 +316,48 @@ nav ul.menu-mobile { display: none; }
     }
 
     .nav-toggle { display: inline-block; }
+}
+
+/* ==================== MOBILE-SECTION ==================== */
+
+.mobile-section {
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 20%;
+    padding: var(--gutter-row-1);
+    background: hsl(0 0% 92.9% /0.50);
+    backdrop-filter: blur(1.6rem);
+    color: var(--gray-900);
+}
+
+#nav-mobile button {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+#nav-mobile button img {
+    width: var(--gutter-col-3);
+    height: var(--gutter-col-3);
+    position: relative;
+}
+
+#nav-mobile ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--gutter-row-3);
+    row-gap: var(--gutter-row-2);
+
+    font-size: 2.4rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+}
+
+#nav-mobile a:hover {
+    color: var(--green-700);
+    text-decoration: underline;
 }
 
 /* ==================== HERO-SECTION ==================== */
