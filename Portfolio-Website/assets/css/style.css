@@ -196,6 +196,8 @@ img {
     overflow: hidden;
     clip: rect(0,0,0,0);
     white-space: nowrap;
+    width: 1px;
+    height: 1px;
 }
 
 /* ==================== TEXT DECORATIONS */
@@ -320,7 +322,7 @@ header img:hover {
 
 /* ==================== MOBILE-SECTION ==================== */
 
-.mobile-section {
+#mobile-section {
     position: fixed;
     z-index: 1000;
     inset: 0 0 0 20%;
@@ -330,23 +332,28 @@ header img:hover {
     color: var(--gray-900);
 }
 
-#nav-mobile button {
-    display: flex;
-    flex-direction: row;
-    margin-left: auto;
-    cursor: pointer;
-}
-
-#nav-mobile button img {
-    width: var(--gutter-col-3);
-    height: var(--gutter-col-3);
-    position: relative;
-}
-
-#nav-mobile ul {
+.nav-mobile {
     display: flex;
     flex-direction: column;
-    margin-top: var(--gutter-row-3);
+    row-gap: var(--gutter-row-3);
+}
+
+.nav-mobile button { 
+    margin-left: auto;
+    width: var(--gutter-col-2);
+    height: var(--gutter-col-2);
+    cursor: pointer;
+    background-image: url(../images/nav-mobile-close.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.nav-mobile button:hover { background-image: url(../images/nav-mobile-close-hover.png); }
+
+.nav-mobile ul {
+    display: flex;
+    flex-direction: column;
     row-gap: var(--gutter-row-2);
 
     font-size: 2.4rem;
@@ -355,7 +362,7 @@ header img:hover {
     letter-spacing: 0.08rem;
 }
 
-#nav-mobile a:hover {
+.nav-mobile ul li a:hover {
     color: var(--green-700);
     text-decoration: underline;
 }
