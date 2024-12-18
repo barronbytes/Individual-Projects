@@ -110,7 +110,7 @@ ACCENT COLOR:
 
 html { font-size: 62.5%; }
 
-body { font-size: 1.6rem; }
+body { font-size: 1.6rem; overflow-x: hidden; }
 
 h1 { font-size: 5.2rem; font-family: var(--ff-serif); line-height: 1; }
 h2 { font-size: 4.4rem; font-family: var(--ff-serif); line-height: 1; }
@@ -317,7 +317,7 @@ header img:hover {
         right: var(--gutter-col-padding);
     }
 
-    .nav-toggle { display: inline-block; }
+    .toggle-open { display: inline-block; }
 }
 
 /* ==================== MOBILE-SECTION ==================== */
@@ -331,6 +331,10 @@ header img:hover {
     backdrop-filter: blur(1.6rem);
     color: var(--gray-900);
 }
+
+#mobile-section[data-visible="true"] { transform: translateX(0%); }
+
+#mobile-section[data-visible="false"] { transform: translateX(100%); }
 
 .nav-mobile {
     display: flex;

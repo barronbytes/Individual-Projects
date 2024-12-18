@@ -7,6 +7,7 @@
     <link href="assets/css/reset.css" rel="stylesheet" >
     <link href="assets/css/style.css" rel="stylesheet" >
     <script src="assets/js/project-card-toggle.js" defer></script>
+    <script src="assets/js/mobile-menu-toggle.js" defer></script>
 </head>
 <body>
 
@@ -51,7 +52,7 @@
                 </ul>
                 <ul class="menu-mobile">
                     <li>
-                        <button class="nav-toggle" aria-controls="mobile-section" aria-expanded="false">
+                        <button class="toggle-open" aria-controls="mobile-section" aria-expanded="false">
                             <img src="assets/images/nav-mobile-open.png" alt="Open the mobile menu.">
                         </button>
                     </li>
@@ -60,9 +61,9 @@
         </div>
     </header>
 
-    <section id="mobile-section">
+    <section id="mobile-section" data-visible="false">
         <nav class="nav-mobile" role="menu">
-            <button aria-controls="mobile-section" aria-expanded="true">
+            <button class="toggle-close" aria-controls="mobile-section" aria-expanded="true">
                 <span class="sr-only">Close the mobile menu.</span>
             </button>
 

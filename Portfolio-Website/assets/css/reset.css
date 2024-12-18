@@ -38,6 +38,7 @@ body {
 
     -webkit-font-smoothing: antialiased; /* improve text rendering on Webkit browsers */
     -moz-osx-font-smoothing: grayscale; /* improve text rendering on Webkit browsers */
+    overflow-x: hidden;
 }
     
 ul, ol, li {

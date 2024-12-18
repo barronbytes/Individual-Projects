@@ -1,14 +1,22 @@
-const NORMAL_MENU = document.querySelector(".nav-toggle");
-const MOBILE_MENU = document.querySelector("#mobile-section");
+const mobileMenu = document.querySelector("#mobile-section");
+const buttonOpen = document.querySelector(".toggle-open");
+const buttonClose = document.querySelector(".toggle-close");
 
-NORMAL_MENU.addEventListener("click", () => {
-    const MOBILE_VISIBLE = MOBILE_MENU.getAttribute("data-visible");
+buttonOpen.addEventListener("click", showMobileMenu);
+buttonOpen.addEventListener("keydown", showMobileMenu);
+buttonClose.addEventListener("click", hideMobileMenu);
+buttonClose.addEventListener("keydown", hideMobileMenu);
 
-    if (MOBILE_VISIBLE === "false") {
-        MOBILE_MENU.setAttribute("data-visible", true);
-    } else {
-        MOBILE_MENU.setAttribute("data-visible", false);
-    }
+function showMobileMenu(event) {
+  // Check for click, Enter key, or Space key
+  if (event.type === "click" || event.key === "Enter" || event.key === " ") {
+    mobileMenu.setAttribute("data-visible", "true");
+  }
+}
 
-    console.log(MOBILE_VISIBLE);
-})
+function hideMobileMenu(event) {
+  // Check for click, Enter key, or Space key
+  if (event.type === "click" || event.key === "Enter" || event.key === " ") {
+    mobileMenu.setAttribute("data-visible", "false");
+  }
+}
