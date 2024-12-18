@@ -1,22 +1,19 @@
 const mobileMenu = document.querySelector("#mobile-section");
-const buttonOpen = document.querySelector(".toggle-open");
-const buttonClose = document.querySelector(".toggle-close");
+const buttons = document.querySelectorAll(".toggle-open, .toggle-close");
 
-buttonOpen.addEventListener("click", showMobileMenu);
-buttonOpen.addEventListener("keydown", showMobileMenu);
-buttonClose.addEventListener("click", hideMobileMenu);
-buttonClose.addEventListener("keydown", hideMobileMenu);
+buttons.forEach((button) => {
+  button.addEventListener("click", toggleMenu);
+  button.addEventListener("keydown", toggleMenu);
+});
 
-function showMobileMenu(event) {
-  // Check for click, Enter key, or Space key
+function toggleMenu(event) {
+  // Handle clicks, Enter, or Space key
   if (event.type === "click" || event.key === "Enter" || event.key === " ") {
-    mobileMenu.setAttribute("data-visible", "true");
-  }
-}
+    if (event.key === " ") event.preventDefault();
 
-function hideMobileMenu(event) {
-  // Check for click, Enter key, or Space key
-  if (event.type === "click" || event.key === "Enter" || event.key === " ") {
-    mobileMenu.setAttribute("data-visible", "false");
+    // Use currentTarget to reliably reference the button
+    const isOpening = event.currentTarget.classList.contains("toggle-open");
+    mobileMenu.setAttribute("data-visible", isOpening ? "true" : "false");
+    mobileMenu.setAttribute("aria-expanded", isOpening ? "true" : "false");
   }
 }
