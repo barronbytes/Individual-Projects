@@ -6,6 +6,8 @@ I built my portfolio website with the intention of completing the [Cloud Resume 
 
 Feel free to check out the [project here](https://www.barronbytes.com/)!
 
+![portfolio website homepage](./images/portfolio-homepage.PNG)
+
 ## Prerequisites
 
 Ensure that you have the following if attempting to complete the challenge as I did:
