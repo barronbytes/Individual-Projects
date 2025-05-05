@@ -4,7 +4,7 @@ I created my portfolio website alongside completing the [Cloud Resume Challenge]
 
 ## Visit The Site
 
-Feel free to check out the [project here](https://www.barronbytes.com/)!
+Feel free to check out the [project here](README.md)! *Link currently down.*
 
 ![portfolio website homepage](./images/portfolio-homepage.PNG)
 
